@@ -107,4 +107,10 @@ app.post('/bfhl', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
+const path = require('path');
+
+// This line tells the server to serve your aesthetic frontend
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
